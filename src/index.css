@@ -1,33 +1,91 @@
 
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-}
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  
-  --color-bg: #F8F9FA;
-  --color-ink: #1A1D21;
-  --color-accent: #3B82F6;
-  --color-accent-foreground: #FFFFFF;
-  --color-muted: #64748B;
-  --color-border: #E2E8F0;
-  --color-card: #FFFFFF;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-@layer base {
-  body {
-    @apply bg-bg text-ink font-sans antialiased;
-  }
+.app {
+  display: flex;
+  height: 100vh;
 }
 
-.glass {
-  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #111;
+  color: white;
+  padding: 20px;
 }
 
-.card-shadow {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.new-btn {
+  padding: 10px;
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Chat area */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+}
+
+/* Messages */
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.msg {
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  max-width: 60%;
+}
+
+.msg.user {
+  background: #2563eb;
+  color: white;
+  margin-left: auto;
+}
+
+.msg.ai {
+  background: #e5e7eb;
+}
+
+/* Input */
+.input-box {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #ddd;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.input-box button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
