@@ -1,0 +1,80 @@
+body {
+  font-family: Arial;
+  background: #f5f7fb;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: white;
+}
+
+.container {
+  display: flex;
+  padding: 30px;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.left { width: 30%; }
+.right { width: 70%; }
+
+.score {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.progress {
+  height: 8px;
+  background: #ddd;
+  margin: 10px 0;
+}
+
+.bar {
+  height: 8px;
+  background: red;
+}
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.dark {
+  background: black;
+  color: white;
+}
+
+.check {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.check.good {
+  background: #e6f9f0;
+}
+
+.check.bad {
+  background: #ffe6e6;
+}
+
+.check-header {
+  display: flex;
+  justify-content: space-between;
+}
