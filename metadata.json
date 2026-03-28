@@ -1,0 +1,5 @@
+{
+  "name": "Remix:  RepoReady",
+  "description": "Automatically assess if a GitHub repository is research-software-ready with weighted scoring and prioritized fix checklists.",
+  "requestFramePermissions": []
+}
