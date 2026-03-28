@@ -1,13 +1,48 @@
-import React, { useState } from "react";
-import { Search, Shield, FileText, CheckCircle2, XCircle, AlertCircle, ArrowRight, Github, Loader2, Trophy, ListChecks, Download } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
-import { fetchRepoData } from "./services/githubService";
-import { assessRepository, AssessmentResult } from "./services/assessmentService";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import "./index.css";
 
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+export default function App() {
+  const [messages, setMessages] = useState([
+    { role: "ai", text: "Hello! How can I help you?" },
+  ]);
+  const [input, setInput] = useState("");
+
+  const sendMessage = () => {
+    if (!input.trim()) return;
+
+    setMessages([...messages, { role: "user", text: input }]);
+    setInput("");
+  };
+
+  return (
+    <div className="app">
+      {/* Sidebar */}
+      <div className="sidebar">
+        <h2>AI Studio</h2>
+        <button className="new-btn">+ New Chat</button>
+      </div>
+
+      {/* Main Chat */}
+      <div className="chat-container">
+        <div className="messages">
+          {messages.map((msg, i) => (
+            <div key={i} className={`msg ${msg.role}`}>
+              {msg.text}
+            </div>
+          ))}
+        </div>
+
+        {/* Input */}
+        <div className="input-box">
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Type a message..."
+          />
+          <button onClick={sendMessage}>Send</button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function App() {
