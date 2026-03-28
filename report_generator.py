@@ -1,7 +1,7 @@
 import json
 import os
-from jinja2 import Template
 import shutil
+from jinja2 import Template
 
 OUTPUT_DIR = "output"
 
@@ -25,5 +25,5 @@ def generate_html(data):
     with open(f"{OUTPUT_DIR}/report.html", "w") as f:
         f.write(html)
 
-    # Copy CSS into output folder
+    # Copy CSS
     shutil.copy("static/styles.css", f"{OUTPUT_DIR}/styles.css")
